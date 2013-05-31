@@ -27,4 +27,4 @@ Now just connect and set the listener for incoming messages:
 
 Take a look at `index.php` for a simple chat example.
 
-[See it in action!](http://phull.aws.af.cm/)
+[See it in action!](http://leocavalcante.com/projects/phull/)

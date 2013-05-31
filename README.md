@@ -3,13 +3,18 @@
 Client-server communication between JS and PHP via Ajax long polling.
 
 ## Usage
-Drop `phull` folder into your webserver acessible folder.
+###### Get real-time behavior in 3 simple steps.
 
+#### #1 - Put it in your server
+Drop `phull` folder into your webserver accessible folder.
+
+#### #2 - Load de client API
 Link the client-side code to your page like any other JavaScript
 
-`<script src="path/to/phull/client.js"></script>`
+ `<script src="path/to/phull/client.js"></script>`
 
-Now just connect and set the listener for incoming messages.
+#### #3 - Very easy to use
+Now just connect and set the listener for incoming messages:
 
     phull.connect('path/to/phull/', function()
     {

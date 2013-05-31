@@ -35,7 +35,7 @@ var phull = phull || (function(){
                 var res = JSON.parse(event.target.response);
 
                 rev = res[0];
-                res[1] && listener(res[1]);
+                res[1] && listener(JSON.parse(res[1]));
             }
 
             pull();

@@ -2,6 +2,7 @@
 
 class Phull {
 
+    private $pathname;
     private $filename;
     private $lockFilename;
     private $data;
@@ -9,8 +10,15 @@ class Phull {
 
     public function __construct()
     {
-        $this->filename = '.phull';
-        $this->lockFilename = '.lock';
+        $this->pathname = '.phull/';
+
+        if ( ! is_dir($this->pathname))
+        {
+            mkdir($this->pathname);
+        }
+
+        $this->filename = $this->pathname.'hooks';
+        $this->lockFilename = $this->pathname.'lock';
         $this->data = new stdClass;
         $this->response = array();
 
@@ -79,7 +87,7 @@ class Phull {
         }
 
         $this->response[] = $client->rev;
-        $this->response[] = json_decode($client->message);
+        $this->response[] = stripslashes($client->message);
     }
 
     public function getResponse()

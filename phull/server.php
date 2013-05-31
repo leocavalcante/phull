@@ -67,7 +67,8 @@ class Phull {
         {
             if (time() > $now + 25)
             {
-                break;
+                header('HTTP/1.0 204 No Content', true, 204);
+                exit;
             }
 
             usleep(250);

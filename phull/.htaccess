@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteRule ^connect$  server.php?op=connect
 RewriteRule ^emit$  server.php?op=emit
-RewriteRule ^(.+)\/(.+)$  server.php?pid=$1&rev=$2
+RewriteRule ^(.+)\/(.+)$  server.php?op=pull&pid=$1&rev=$2

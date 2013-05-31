@@ -29,7 +29,7 @@ switch ($op)
     break;
 
     case 'emit':
-        $request = file_get_contents('php://input');
+        $request = $_POST['data'];
 
         $stmt = $db->prepare("UPDATE phull SET acts = :acts, rev = rev + 1");
         $stmt->bindValue(':acts', $request);

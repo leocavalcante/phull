@@ -62,7 +62,8 @@ var phull = phull || (function(){
         if (data)
         {
             emitxhr.open('POST', getOpUrl('emit'));
-            emitxhr.send(JSON.stringify(data));
+            emitxhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            emitxhr.send('data=' + JSON.stringify(data));
         }
     }
 

@@ -55,6 +55,9 @@ var phull = phull || (function(){
     function disconnect()
     {
         polling = false;
+        connxhr.abort();
+        pullxhr.abort();
+        emitxhr.abort();
     }
 
     function emit(data)
@@ -62,8 +65,7 @@ var phull = phull || (function(){
         if (data)
         {
             emitxhr.open('POST', getOpUrl('emit'));
-            emitxhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            emitxhr.send('data=' + JSON.stringify(data));
+            emitxhr.send(JSON.stringify(data));
         }
     }
 

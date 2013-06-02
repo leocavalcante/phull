@@ -39,7 +39,7 @@ class Phull {
         }
 
         $client = new stdClass;
-        $client->message = '';
+        $client->msg = '';
         $client->rev = 1;
 
         $this->data->clients->{$pid} = $client;
@@ -50,14 +50,14 @@ class Phull {
         $this->response[] = 1;
     }
 
-    public function emit($message)
+    public function emit($msg)
     {
         $this->read();
 
         foreach ($this->data->clients as $pid => $client)
         {
             $client = $this->data->clients->{$pid};
-            $client->message = $message;
+            $client->msg = $msg;
             $client->rev += 1;
         }
 
@@ -90,7 +90,7 @@ class Phull {
         }
 
         $this->response[] = $client->rev;
-        $this->response[] = stripslashes($client->message);
+        $this->response[] = stripslashes($client->msg);
     }
 
     public function getResponse()

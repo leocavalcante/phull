@@ -17,7 +17,7 @@ class Phull {
             mkdir($this->pathname);
         }
 
-        $this->filename = $this->pathname.'hooks';
+        $this->filename = $this->pathname.'storage';
         $this->lockFilename = $this->pathname.'lock';
         $this->data = new stdClass;
         $this->response = array();
@@ -144,7 +144,7 @@ switch ($_REQUEST['op']) {
     break;
 
     case 'emit':
-        $phull->emit($_POST['data']);
+        $phull->emit(file_get_contents('php://input'));
     break;
 
     case 'pull':

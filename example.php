@@ -19,6 +19,7 @@
                 <input type="text" id="your-name" placeholder="your name">
                 <input type="text" id="your-text" placeholder="your text">
                 <button type="submit" class="btn btn-primary">Send</button>
+                <button type="reset" class="btn" id="disconnect-btn">Disconnect</button>
             </form>
         </div>
     </div>
@@ -31,7 +32,7 @@
                             <strong><i class="icon icon-user"></i>{{user}} says: </strong>
                             {{text}}<br>
                             <small>
-                                at <time class="update" datetime="{{at}}">{{moment at}}</time>
+                                <time class="update" datetime="{{at}}"></time>
                             </small>
                         </p>
                     </li>
@@ -72,8 +73,9 @@
         event.preventDefault();
     });
 
-    Handlebars.registerHelper('moment', function(date) {
-        return moment(date).fromNow();
+    $('#disconnect-btn').on('click', function (event)
+    {
+        phull.disconnect();
     });
 
     setInterval(function()

@@ -32,7 +32,7 @@
                             <strong><i class="icon icon-user"></i>{{user}} says: </strong>
                             {{text}}<br>
                             <small>
-                                <time class="update" datetime="{{at}}"></time>
+                                <time data-moment datetime="{{at}}"></time>
                             </small>
                         </p>
                     </li>
@@ -80,7 +80,7 @@
 
     setInterval(function()
     {
-        $('time.update').each(function()
+        $('[data-moment]').each(function()
         {
             $(this).text(moment($(this).attr('datetime')).fromNow());
         });

@@ -1,4 +1,4 @@
-var phull = phull || (function(){
+var phull = phull || (function () {
 
     var pid,
         rev,
@@ -10,7 +10,7 @@ var phull = phull || (function(){
         pullxhr = new XMLHttpRequest,
         emitxhr = new XMLHttpRequest;
 
-    connxhr.onreadystatechange = function(event)
+    connxhr.onreadystatechange = function (event)
     {
         if (connxhr.readyState === 4)
         {
@@ -26,7 +26,7 @@ var phull = phull || (function(){
         }
     }
 
-    pullxhr.onreadystatechange = function(event)
+    pullxhr.onreadystatechange = function (event)
     {
         if (pullxhr.readyState === 4)
         {

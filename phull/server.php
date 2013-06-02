@@ -61,7 +61,10 @@ class Phull {
             $client->rev += 1;
         }
 
-        $this->response[] = $this->write();
+        $this->write();
+
+        header('HTTP/1.0 204 No Content', true, 204);
+        exit;
     }
 
     public function pull($pid, $rev, $timeout = 25)
@@ -132,7 +135,7 @@ class Phull {
 
         $this->lock();
         file_put_contents($this->filename, json_encode($this->data));
-        return $this->unlock();
+        $this->unlock();
     }
 }
 

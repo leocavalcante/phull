@@ -24,7 +24,7 @@ var phull = phull || (function () {
             pull();
             onconnected();
         }
-    }
+    };
 
     pullxhr.onreadystatechange = function (event)
     {
@@ -40,7 +40,7 @@ var phull = phull || (function () {
 
             pull();
         }
-    }
+    };
 
     function connect(path, connFn, fn)
     {
